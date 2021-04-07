@@ -5,7 +5,7 @@
 using namespace std;
 double func(double x)
 {
-    return (2 * log(x) + x - 2); // Вычисление функции //
+    return (2*log(x) - x*x + 5); // Вычисление функции //
 }
 double find(double x0, double x1, double eps) // Дихотомии //
 {
@@ -31,7 +31,7 @@ double find2(double x0, double eps) // Метод итераций //
     cout << "x0= " << x0 << " ";
     do {
         rez = x0;
-        x0 = sqrt(1+(2/x0));        //извлечение корня из производной
+        x0 = sqrt(5 + 2 * log(x0));        //извлечение корня из производной
         iter++;
     } while (fabs(rez - x0) > eps); //модуль
     cout << "\nИтерации : " << iter << endl;
@@ -42,8 +42,8 @@ double find3(double x0, double eps) //Метод Ньютона//
     double f, df; int iter = 0;
     cout << "x0= " << x0 << " ";
     do {
-        f = 2 * log(x0) + x0 -2;    // функция
-        df = -2/pow(x0, 2);         // вторая производная
+        f = 2 * log(x0) - x0 * x0 + 5;   // функция
+        df = -2*x0+2/x0;         // вторая производная
         x0 = x0 - f / df;
         iter++;
     } while (fabs(f) > eps);        // модуль из функции
