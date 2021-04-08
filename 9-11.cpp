@@ -61,7 +61,7 @@ int main()
 	pr2 = h * (fx0 + fx1 + fx2 + fx3); // формула правых
 	printf("Интеграл = %.8f", pr2);
 	cout << "\n";
-	Pogr2 = abs(tr - pr2);
+	Pogr2 = abs(tr - pr2);  // потому что она опред суммарной площадью заштрихованных
 	printf("Погрешность = %.8f", Pogr2);
 	cout << "\n\n";
 
